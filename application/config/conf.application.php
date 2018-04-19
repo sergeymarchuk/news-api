@@ -2,6 +2,7 @@
     return array(
         'name_site' => 'news-api',
         'language' => 'ua',
+        'languagesList' => array('en', 'ua', 'ru'),
         'routes' => array(
             'controllers' => array(
                 'admin' => array(
@@ -12,7 +13,7 @@
                 'news' => array(
                     'action' => array(
                         'index',
-                        'veiw'
+                        'view'
                     )
                 ),
                 'user' => array(

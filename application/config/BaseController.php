@@ -8,6 +8,11 @@ class BaseController {
     protected $model;
     protected $params;
 
+    public function __construct($data = array()) {
+        $this->data = $data;
+        $this->params = App::getRoute()->getParams();
+    }
+
     /**
      * @return mixed
      */

@@ -4,25 +4,17 @@
         'language' => 'ua',
         'languagesList' => array('en', 'ua', 'ru'),
         'routes' => array(
-            'controllers' => array(
-                'admin' => array(
-                    'action' => array(
-
-                    )
-                ),
-                'news' => array(
-                    'action' => array(
-                        'index',
-                        'view'
-                    )
-                ),
-                'user' => array(
-                    'action' => array(
-                        'index',
-                        'change',
-                        'view'
-                    )
-                )
+            'admin' => array(
+                'index'
+            ),
+            'news' => array(
+                'index',
+                'view'
+            ),
+            'user' => array(
+                'index',
+                'change',
+                'view'
             )
         )
     );

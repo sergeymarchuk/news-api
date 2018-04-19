@@ -16,8 +16,24 @@ class Router {
         $path = $uri_parts[0];
 
         $path_parts = explode('/', $path);
-        if (in_array($path_parts[0], array('en', 'ru', 'ua'))) {
+
+        if (in_array($path_parts[0], Config::get('languagesList'))) {
             $this->language = $path_parts[0];
+            array_shift($path_parts);
+        }
+
+        if (key_exists($path_parts[0], $routes)) {
+            $this->controller = $path_parts[0];
+            array_shift($path_parts);
+        }
+
+        if (in_array($path_parts[0], $routes[$this->controller])) {
+            $this->action = $path_parts[0];
+            array_shift($path_parts);
+        }
+
+        if (!empty($path_parts)) {
+            $this->params = $path_parts;
         }
     }
 
@@ -52,8 +68,7 @@ class Router {
     /**
      * @return mixed
      */
-    public function getLanguage()
-    {
+    public function getLanguage() {
         return $this->language;
     }
 }

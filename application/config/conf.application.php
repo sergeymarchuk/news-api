@@ -1,7 +1,6 @@
 <?php
     return array(
         'name_site' => 'news-api',
-        'language' => 'ua',
         'languagesList' => array('en', 'ua', 'ru'),
         'routes' => array(
             'admin' => array(
@@ -15,6 +14,11 @@
                 'index',
                 'change',
                 'view'
+            ),
+            'default' => array(
+                'controller' => 'news',
+                'action' => 'index',
+                'language' => 'ua'
             )
         )
     );

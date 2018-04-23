@@ -10,6 +10,7 @@ class Router {
     private $language;
 
     public function __construct($uri, $routes) {
+        $this->setDefaultRoute($routes['default']);
         $this->uri = urldecode(trim($uri, '/'));
 
         $uri_parts = explode('?', $this->uri);
@@ -35,6 +36,12 @@ class Router {
         if (!empty($path_parts)) {
             $this->params = $path_parts;
         }
+    }
+
+    private function setDefaultRoute($default) {
+        $this->controller = $default['controller'];
+        $this->action = $default['action'];
+        $this->language = $default['language'];
     }
 
     /**

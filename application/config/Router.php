@@ -8,8 +8,11 @@ class Router {
     private $action;
     private $params;
     private $language;
+    private $layout_path;
 
-    public function __construct($uri, $routes) {
+    public function __construct($uri) {
+        $routes = require_once 'app.routes.php';
+
         $this->setDefaultRoute($routes['default']);
         $this->uri = urldecode(trim($uri, '/'));
 
@@ -18,13 +21,14 @@ class Router {
 
         $path_parts = explode('/', $path);
 
-        if (in_array($path_parts[0], Config::get('languagesList'))) {
+        if (in_array($path_parts[0], Config::get('languages_list'))) {
             $this->language = $path_parts[0];
             array_shift($path_parts);
         }
 
         if (key_exists($path_parts[0], $routes)) {
             $this->controller = $path_parts[0];
+            $this->layout_path = VIEW_PATH . DS . $this->controller . '.layout.php';
             array_shift($path_parts);
         }
 
@@ -38,10 +42,14 @@ class Router {
         }
     }
 
+    /**
+     * @param $default
+     */
     private function setDefaultRoute($default) {
         $this->controller = $default['controller'];
         $this->action = $default['action'];
         $this->language = $default['language'];
+        $this->layout_path = VIEW_PATH . DS . $default['layout'] . '.php';
     }
 
     /**
@@ -77,5 +85,12 @@ class Router {
      */
     public function getLanguage() {
         return $this->language;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLayout() {
+        return $this->layout_path;
     }
 }

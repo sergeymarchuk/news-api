@@ -1,9 +1,9 @@
 <?php
     return array(
         'name_site' => 'Marich News',
-        'languagesList' => array('en', 'ua', 'ru'),
+        'languages_list' => array('en', 'ua', 'ru'),
         'api_key' => '8a00eb9d39104bd481105224e378ecce',
-        'categoryList' => array(
+        'category_list' => array(
             'business',
             'entertainment',
             'general',
@@ -12,8 +12,8 @@
             'sports',
             'technology'
         ),
-        'defaultCountry' => 'en',
-        'countryList' => array(
+        'default_country' => 'en',
+        'country_list' => array(
             'United Arab Emirates' => 'ae',
             'Argentina' => 'ar',
             'Austria' => 'at',

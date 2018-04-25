@@ -35,7 +35,11 @@ class Autoloader {
     }
 
     private function init($baseDir) {
-        $list = array_filter(scandir($baseDir), function ($value) {if (!in_array($value, array('.','..'))) {return true;} });
+        $list = array_filter(scandir($baseDir), function ($value) {
+                if (!in_array($value, array('.','..'))) {
+                    return true;
+                }
+            });
 
         foreach ($list as $value) {
             if (is_dir($baseDir . DS . $value)) {

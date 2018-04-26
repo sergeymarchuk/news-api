@@ -12,7 +12,7 @@
             'sports',
             'technology'
         ),
-        'country' => 'en',
+        'country' => 'gb',
         'country_list' => array(
             'United Arab Emirates' => 'ae',
             'Argentina' => 'ar',

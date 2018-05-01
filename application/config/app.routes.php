@@ -10,7 +10,8 @@
         'user' => array(
             'index',
             'change',
-            'view'
+            'view',
+            'preferences'
         ),
         'default' => array(
             'controller' => 'news',

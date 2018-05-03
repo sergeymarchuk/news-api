@@ -2,6 +2,7 @@
     define ('DS', DIRECTORY_SEPARATOR);
     define ('ROOT', dirname(dirname(__FILE__)));
     define ('VIEW_PATH', ROOT . DS . 'application' . DS . 'views');
+    define ('DOMAIN', 'http://' . $_SERVER['HTTP_HOST']);
 
     require_once ROOT . DS . 'application' . DS . 'config' . DS . 'Autoloader.php';
     $loader = new Autoloader(ROOT, 'application');

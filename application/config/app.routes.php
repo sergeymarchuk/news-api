@@ -5,7 +5,8 @@
         ),
         'news' => array(
             'index',
-            'view'
+            'view',
+            'search'
         ),
         'user' => array(
             'index',

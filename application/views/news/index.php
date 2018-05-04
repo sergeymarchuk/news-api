@@ -9,7 +9,7 @@
                 <img src="<?= $data['news_list'][$item]->urlToImage ?>" alt="" style="width: <?= $item == 0 ? '700px' : '350px' ?>; padding-bottom: 10px">
                 <p><?= $data['news_list'][$item]->title ?></p>
                 <p><?= $data['news_list'][$item]->publishedAt ?></p>
-                <p><a class="btn btn-secondary" href="<?= $data['news_list'][$item]->url ?>" role="button">View details &raquo;</a></p>
+                <p><a class="btn btn-secondary" href="<?= $data['news_list'][$item]->url ?>" target="_blank" role="button">View details &raquo;</a></p>
             </div>
         <?php }?>
 
